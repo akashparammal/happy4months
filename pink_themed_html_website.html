@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 4 Months baby!!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffe6f2;
+            color: #4a0033;
+            opacity: 0;
+            animation: fadeInPage 1.5s ease-in forwards;
+        }
+
+        header {
+            background: #ff8acb;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #ffb3dc;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a0033;
+            font-weight: bold;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            background-image: url('https://via.placeholder.com/1200x400/ffb3dc/ffffff?text=Happy+4+Months');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            animation: overlayPulse 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes overlayPulse {
+            from { background-color: rgba(0,0,0,0.3); }
+            to { background-color: rgba(0,0,0,0.5); }
+        }
+
+        .hero h1 {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #cc017d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #ff8acb;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: fixed;
+            bottom: -50px;
+            font-size: 24px;
+            color: #ff5fa8;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-120vh) translateX(30px); opacity: 0; }
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>To My Pretty Lady Esh</header>
+
+    <nav>
+        <a href="#message">Message</a>
+        <a href="#music">Music</a>
+        <a href="#gallery">Gallery</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Happy 4 Months Baby!!</h1>
+    </section>
+
+    <section class="section" id="message">
+        <h2>To my pretty girl... </h2>
+        <textarea style="width:100%; height:200px; padding:15px; border-radius:10px; border:2px solid #ff8acb; font-size:1rem; resize:vertical; background:#ffe6f2; color:#4a0033;"></textarea>
+    </section>
+
+    <section class="section" id="music">
+        <h2>Music for You</h2>
+        <audio controls style="width:100%; margin-top:10px;">
+            <source src="your-song.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2>Gallery</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:15px; margin-top:15px;">
+            <img src="https://via.placeholder.com/300x300/ffb3dc/ffffff?text=Photo+1" style="width:100%; border-radius:12px;">
+            <img src="https://via.placeholder.com/300x300/ff99d6/ffffff?text=Photo+2" style="width:100%; border-radius:12px;">
+            <img src="https://via.placeholder.com/300x300/ff66c6/ffffff?text=Photo+3" style="width:100%; border-radius:12px;">
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Pink Theme Website — All Rights Reserved
+    </footer>
+
+    <!-- Floating hearts container -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+        setInterval(createHeart, 700);
+    </script>
+</body>
+</html>
