@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Someone Special ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Georgia", serif;
+            background: #ffe6f2;
+            color: #4a0033;
+            line-height: 1.7;
+        }
+        .envelope-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffcce6;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .click-text {
+            position: absolute;
+            top: 15%;
+            font-size: 22px;
+            animation: pulse 1.8s infinite;
+            color: #b30059;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.08); }
+            100% { opacity: 0.5; transform: scale(1); }
+        }
+        .content {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.2s ease;
+            max-width: 800px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.55);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(255, 0, 128, 0.15);
+        }
+        .section:not(:last-child)::after {
+            content: "♥";
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            opacity: 0.5;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+        .show {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="envelope-wrapper" onclick="openLetter()">
+    <div class="click-text">Click to open 💖</div>
+</div>
+
+<div id="letterContent" class="content">
+    <div class="section">
+        <p>Your first message goes here…</p>
+    </div>
+
+    <div class="section">
+        <p>Your second heartfelt section goes here…</p>
+    </div>
+
+    <div class="section">
+        <p>You can add photos, memories, messages, anything you want here…</p>
+    </div>
+
+    <div class="section">
+        <p>And another space to write more…</p>
+    </div>
+</div>
+
+<script>
+function openLetter() {
+    document.querySelector(".envelope-wrapper").style.display = "none";
+    document.getElementById("letterContent").classList.add("show");
+}
+</script>
+
+</body>
+</html>
